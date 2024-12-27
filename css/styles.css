@@ -40,3 +40,66 @@ picture {
 .attribution a { 
     color: hsl(228, 45%, 44%); 
 }
+
+body {
+    padding: 0 1.5rem;
+    display: grid;
+    height: 100vh;
+    align-items: center;
+}
+main {
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: 0px 32px 56px 0px rgba(80, 0, 118, 0.10);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .header__img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .header__heading {
+        color: var(--dark-purple);
+        font-size: 2rem;
+        font-weight: 700;
+    }
+}
+
+.faq {
+    margin-top: 1.5rem;
+    border-bottom: 0.0625rem solid var(--light-pink);
+}
+/* .faq:last-child {
+    border-bottom: none;
+} */
+
+
+.question {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .question__heading {
+        color: var(--dark-purple);
+        font-size: 1rem;
+        font-weight: 600;
+    }
+}
+
+.answer {
+    margin-top: 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+
+    .answer__text {
+        color: var(--grayish-purple);
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 150%;
+    }
+}
