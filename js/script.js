@@ -8,7 +8,7 @@ const accordion = document.querySelectorAll('.faq');
  * @param {string} faq - The faq that is clicked on.
  */
 
-function setAriaExpandedAtt(faq) {
+function toggle(faq) {
 
     let ariaExpandedValue = faq.getAttribute("aria-expanded");
 
@@ -28,6 +28,6 @@ function setAriaExpandedAtt(faq) {
 accordion.forEach(faq => {
     faq.addEventListener('click', e => {
 
-        setAriaExpandedAtt(faq);
+        toggle(faq);
     })
 })
