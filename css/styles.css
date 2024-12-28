@@ -72,7 +72,15 @@ main {
 
 .faq {
     margin-top: 1.5rem;
+    padding-bottom: 0;
     border-bottom: 0.0625rem solid var(--light-pink);
+
+    /* by setting display to grid and grid-template-rows to .3fr and 0fr, 
+    the second item in the grid which is the answer will be hidden*/
+    display: grid;
+    grid-template-rows: .3fr 0fr;
+    transition: grid-template-rows .3s ease-in-out;
+    
 }
 /* .faq:last-child {
     border-bottom: none;
@@ -93,7 +101,6 @@ main {
 
 .answer {
     margin-top: 1.5rem;
-    max-height: 0;
     overflow: hidden;
 
     .answer__text {
@@ -102,4 +109,11 @@ main {
         font-weight: 400;
         line-height: 150%;
     }
+}
+
+/* by setting grid-template-rows to .3fr 1fr, the second item in the grid
+ which is the answer will appear */
+.faq[aria-expanded="true"]{
+    grid-template-rows: .3fr 1fr;
+    padding-bottom: 1.25rem;
 }
