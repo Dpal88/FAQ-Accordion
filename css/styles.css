@@ -34,13 +34,43 @@ picture {
     display: block;
 }
 
+/*-------- ATTRIBUTION --------*/
+
 .attribution { 
-    font-size: 11px;
+    position: relative;
+    bottom: -40px;
+    font-size: .75rem;
     text-align: center; 
 }
 .attribution a { 
-    color: hsl(228, 45%, 44%); 
+    color: var(--bright-purple);
+    font-weight: 600;
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+    transition: color 0.5s ease-in-out;
 }
+.attribution a::before {
+    background: var(--dark-purple);
+    content: "";
+    inset: 0;
+    position: absolute;
+    /* Can change scaleY to scaleX for different effect, along with changing origin*/
+    transform: scaleY(0);
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+    z-index: -1;
+}
+.attribution a:hover {
+    color: var(--bright-purple);
+}
+.attribution a:hover::before {
+    /* Can change scaleY to scaleX for different effect, along with changing origin*/
+    transform: scaleY(1);
+    transform-origin: left;
+}
+
+/*-------- MAIN STYLES --------*/
 
 body {
     padding: 0 1.5rem;
@@ -56,6 +86,11 @@ main {
     background: var(--white);
     border-radius: 0.5rem;
     box-shadow: 0px 32px 56px 0px rgba(80, 0, 118, 0.10);
+
+    /* 768px = 48rem */
+    @media (width > 48rem) {
+        padding: 2.5rem 2.5rem 1rem;
+    }
 }
 
 .bg-img {
@@ -82,12 +117,25 @@ main {
     .header__img {
         width: 1.5rem;
         height: 1.5rem;
+
+        /* 768px = 48rem */
+        @media (width > 48rem) {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
     }
+
     .header__heading {
         color: var(--dark-purple);
         font-size: 2rem;
         font-weight: 700;
+
+        /* 768px = 48rem */
+        @media (width > 48rem) {
+            font-size: 3.5rem;
+        }
     }
+
 }
 
 .faq {
@@ -108,15 +156,20 @@ main {
     &[aria-expanded="true"]{
         grid-template-rows: .3fr 1fr;
         padding-bottom: 1.25rem;
-    }
 
-    &:last-child {
-        border-bottom: none;
+        /* 768px = 48rem */
+        @media (width > 48rem) {
+            padding-bottom: 1.5rem;
+        }
     }
 
     &:hover .question__heading {
         color: var(--bright-purple);
     }
+}
+
+.border-none {
+    border-bottom: none;
 }
 
 
@@ -130,7 +183,13 @@ main {
         color: var(--dark-purple);
         font-size: 1rem;
         font-weight: 600;
+
+        /* 768px = 48rem */
+        @media (width > 48rem) {
+            font-size: 1.125rem;
+        }
     }
+    
 }
 
 .answer {
@@ -142,6 +201,11 @@ main {
         font-size: 0.875rem;
         font-weight: 400;
         line-height: 150%;
+
+        /* 768px = 48rem */
+        @media (width > 48rem) {
+            font-size: 1rem;
+        }
     }
 }
 
